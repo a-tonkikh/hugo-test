@@ -1,0 +1,28 @@
+baseURL = 'https://example.org/'
+languageCode = 'ru'
+DefaultContentLanguage = 'ru'
+title = 'Тестовое задание'
+theme = 'hugo-theme-stack'
+[params]
+    favicon = '/favicon.ico'
+    [params.sidebar]
+    subtitle = 'Тестовое задание для позиции Специалист по настройке CMS и разработке библиотек компонентов'
+    [params.sidebar.avatar]
+    src = "img/avatar.jpg"
+[menu]
+   [[menu.main]]
+    name = "На главную"
+    url = "/"
+    weight = 10
+    identifier = "home"
+    [menu.main.params]
+        icon = "home"
+        newTab = false
+    [[menu.social]]
+    name = "GitHub"
+    url = "https://github.com/a-tonkikh"
+    weight = 10
+    identifier = "github"
+    [menu.social.params]
+        icon = "brand-github"
+        newTab = true

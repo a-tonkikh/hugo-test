@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{- $image := partialCached "helper/image" (dict "Context" . "Type" "article") .RelPermalink "article" -}}
+  <div class="about">
+    {{ if $image.exists }}
+      <div class="about__image">
+        <img src="{{ $image.permalink }}" loading="lazy" alt="{{ .Title }}" />
+      </div>
+    {{ end }}
+    <div class="about__content">
+      <h1 class="about__title">{{ .Title }}</h1>
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

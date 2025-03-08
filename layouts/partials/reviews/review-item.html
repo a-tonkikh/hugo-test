@@ -1,0 +1,9 @@
+<div class="review">
+    <p class="review__name">{{ .Params.author }}</p>
+    {{ if isset .Params "job" }}
+        <p class="review__job">Должность: {{ .Params.job }}</p>
+    {{ end }}
+    <div class="review__text">
+        {{ .Content }}
+    </div>
+</div>
