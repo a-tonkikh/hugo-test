@@ -5,34 +5,6 @@
 {{ define "main" }}
     <div class="reviews">
         <h1 class="reviews__title">{{ .Title }}</h1>
-
-        <div class="reviews__list">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    {{ range where .Site.Pages "Type" "review"}}
-                    <div class="swiper-slide">
-                        {{ partial "reviews/review-item.html" . }}
-                    </div>
-                    {{ end }}
-                </div>
-            </div>
-            <button type="button" class="reviews__btn swiper-button-prev"></button>
-            <button type="button" class="reviews__btn swiper-button-next"></button>
-            <div class="swiper-pagination"></div>
-        </div>
+        {{ partial "reviews/review-slider.html" . }}
     </div>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: false,
-            slidesPerView: 1,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            }
-        });
-    </script>
 {{ end }}
